@@ -99,6 +99,9 @@ private files are accidentally staged.
 - Prefer `rg`/`rg --files` for repository search.
 - Use `python3 -m py_compile` for Python smoke checks.
 - Use the repo smoke-test script once available: `python3 scripts/smoke_test.py`.
+- Use `python3 scripts/application_smoke_test.py` to verify the local CV and
+  cover-letter PDF pipeline end to end. Use `--keep` when rendered artifacts
+  need visual inspection.
 - If Bun is unavailable, report that TypeScript job-search CLIs could not be run
   locally.
 - If LaTeX is unavailable, report that PDF compilation could not be verified.

@@ -34,6 +34,7 @@ The framework encodes career guidance best practices, including structured evalu
 - Python 3.10+
 - [Bun](https://bun.sh) (for Danish job search CLI tools)
 - LaTeX distribution with `lualatex` and `xelatex`: [TeX Live](https://tug.org/texlive/) or [MiKTeX](https://miktex.org/). The CV compiles with `lualatex` (pdflatex often fails on modern MiKTeX installs with `fontawesome5` font-expansion errors); the cover letter compiles with `xelatex` because `cover.cls` requires `fontspec`.
+  - TinyTeX users may need: `tlmgr install moderncv fancyhdr microtype fontawesome5 academicons colortbl pgf import needspace titlesec textpos xltxtra xunicode cite setspace realscripts`
 
 ## Quick start
 
@@ -237,6 +238,14 @@ python3 scripts/smoke_test.py
 ```
 
 The smoke test checks Codex skill metadata, project guidance, stale Claude-only references in migrated skills, CLI import wiring, package metadata, scraper query configuration, and Python syntax. If Bun is not installed, CLI runtime checks are reported as skipped rather than failed.
+
+Run the application PDF smoke test after installing LaTeX packages or before trusting the application pipeline for a real posting:
+
+```bash
+python3 scripts/application_smoke_test.py
+```
+
+That command compiles `cv/main_example.tex` through the CV wrapper, generates a temporary cover letter through the cover-letter wrapper, and verifies the required page counts. Add `--keep` if you want the generated smoke-test cover letter PDF to remain on disk for visual inspection.
 
 ### Starting over
 

@@ -99,7 +99,7 @@ The font wrapper is mandatory — if you just move `\begin{itemize}` outside `\l
 \lettercontent{I look forward to hearing from you.}
 
 \begin{flushright}
-\closing{Kind regards,\\}
+\closing{Kind regards,}
 
 \signature{[YOUR_NAME]}
 \end{flushright}

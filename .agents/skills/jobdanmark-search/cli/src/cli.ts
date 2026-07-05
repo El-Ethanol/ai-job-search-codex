@@ -185,7 +185,7 @@ async function main(): Promise<number> {
   try {
     if (!command || flags.help || flags.h) {
       process.stdout.write(HELP)
-      return command ? 0 : 1
+      return flags.help || flags.h || command ? 0 : 1
     }
     if (command === "search") return runSearch(flags)
     if (command === "detail") return runDetail(flags)

@@ -68,7 +68,7 @@ async function main(): Promise<number> {
 
   if (!cmd || flags.help || flags.h) {
     process.stdout.write(HELP)
-    return cmd ? 0 : 1
+    return flags.help || flags.h || cmd ? 0 : 1
   }
 
   if (cmd === "search") {

@@ -10,6 +10,17 @@ import sys
 from pathlib import Path
 
 
+def find_pdfinfo() -> str | None:
+    if found := shutil.which("pdfinfo"):
+        return found
+
+    codex_cache = Path.home() / ".cache" / "codex-runtimes"
+    for candidate in codex_cache.glob("*/dependencies/bin/pdfinfo"):
+        if candidate.is_file():
+            return str(candidate)
+    return None
+
+
 def count_with_pypdf(path: Path) -> int | None:
     try:
         from pypdf import PdfReader  # type: ignore
@@ -19,9 +30,10 @@ def count_with_pypdf(path: Path) -> int | None:
 
 
 def count_with_pdfinfo(path: Path) -> int | None:
-    if not shutil.which("pdfinfo"):
+    pdfinfo = find_pdfinfo()
+    if not pdfinfo:
         return None
-    result = subprocess.run(["pdfinfo", str(path)], text=True, capture_output=True)
+    result = subprocess.run([pdfinfo, str(path)], text=True, capture_output=True)
     if result.returncode != 0:
         raise RuntimeError(result.stderr.strip() or result.stdout.strip())
     for line in result.stdout.splitlines():

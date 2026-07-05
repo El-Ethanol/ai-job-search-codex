@@ -28,22 +28,14 @@ Expected output: `Output written on main_<company>.pdf (2 pages, ...)`. Any page
 % Force both first and last name AND section headings to render in moderncv
 % blue (color1). Default banking on lualatex+MiKTeX leaves these black, which
 % looks inconsistent with the rest of the blue accent scheme.
-\renewcommand*{\firstnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
-\renewcommand*{\lastnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
-\renewcommand*{\sectionstyle}[1]{{\sectionfont\color{color1}#1}}
+\providecommand*{\firstnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
+\providecommand*{\lastnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
+\providecommand*{\sectionstyle}[1]{{\sectionfont\color{color1}#1}}
 
 \usepackage[utf8]{inputenc}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
-    urlcolor=blue,
-    pdftitle={[YOUR_NAME] - CV},
-    pdfpagemode=FullScreen,
-}
 \usepackage[scale=0.77]{geometry}
 \usepackage{import}
+\usepackage{needspace}
 
 % Personal data
 \name{[FIRST_NAME]}{[LAST_NAME]}
@@ -68,7 +60,7 @@ Expected output: `Output written on main_<company>.pdf (2 pages, ...)`. Any page
 
 ### Color overrides
 
-The three `\renewcommand*` lines in the preamble are required on lualatex+MiKTeX. Without them the firstname, lastname, and section headings render in black even though `\moderncvcolor{blue}` is set, which looks inconsistent with the rest of the blue accent scheme (links, bullet markers, contact icons). The override forces all three to use `color1` (moderncv's accent colour, which becomes blue under `\moderncvcolor{blue}`). Both names render bold; if you prefer the firstname in regular weight, change the firstnamestyle override from `\bfseries` to `\mdseries`. Don't drop the override - on most modern installs the defaults render visibly wrong.
+The three `\providecommand*` lines in the preamble are compatible across moderncv releases. Some moderncv versions define these commands and some do not; `\providecommand*` avoids compile failures on versions where they are absent. The intended style is blue section headings and bold names using `color1` where the installed moderncv release supports those hooks.
 
 ### Spacing inside itemize lists (important)
 

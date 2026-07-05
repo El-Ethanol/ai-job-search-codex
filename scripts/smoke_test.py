@@ -32,6 +32,13 @@ CLI_SKILLS = [
 ]
 
 
+def find_bun() -> str | None:
+    if found := shutil.which("bun"):
+        return found
+    bundled = Path.home() / ".bun" / "bin" / "bun"
+    return str(bundled) if bundled.is_file() else None
+
+
 class Report:
     def __init__(self) -> None:
         self.failures: list[str] = []
@@ -166,6 +173,8 @@ def check_python(report: Report) -> None:
     files = [
         ROOT / "salary_lookup.py",
         ROOT / "tools" / "convert_salary_excel.py",
+        ROOT / "scripts" / "application_smoke_test.py",
+        ROOT / "scripts" / "check_pdf_pages.py",
         ROOT / "scripts" / "scrape_jobs.py",
         Path(__file__).resolve(),
     ]
@@ -195,7 +204,7 @@ def check_scraper_config(report: Report) -> None:
 
 
 def check_bun_help(report: Report) -> None:
-    bun = shutil.which("bun")
+    bun = find_bun()
     if not bun:
         report.skip("bun not installed, skipped CLI runtime help checks")
         return
@@ -219,11 +228,32 @@ def check_latex_tools(report: Report) -> None:
     if missing:
         report.skip("LaTeX not installed, skipped PDF compile smoke checks: " + ", ".join(missing))
     elif shutil.which("kpsewhich"):
-        result = subprocess.run(["kpsewhich", "moderncv.cls"], text=True, capture_output=True)
-        if result.returncode != 0:
-            report.skip("LaTeX is installed, but moderncv.cls is missing. Install moderncv before compiling CVs.")
+        packages = [
+            "moderncv.cls",
+            "fontawesome5.sty",
+            "academicons.sty",
+            "fancyhdr.sty",
+            "microtype.sty",
+            "needspace.sty",
+            "titlesec.sty",
+            "textpos.sty",
+            "xltxtra.sty",
+            "xunicode.sty",
+            "cite.sty",
+            "setspace.sty",
+            "realscripts.sty",
+        ]
+        missing_packages = [
+            package
+            for package in packages
+            if subprocess.run(["kpsewhich", package], text=True, capture_output=True).returncode != 0
+        ]
+        if missing_packages:
+            report.skip(
+                "LaTeX is installed, but PDF package(s) are missing: " + ", ".join(missing_packages)
+            )
         else:
-            report.ok("LaTeX tools and moderncv class available")
+            report.ok("LaTeX tools and application PDF packages available")
     else:
         report.skip("LaTeX tools available, but kpsewhich is missing so moderncv availability was not checked")
 
