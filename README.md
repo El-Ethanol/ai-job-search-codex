@@ -74,6 +74,16 @@ $job-scraper
 
 This searches multiple job portals for positions matching your profile, deduplicates results, and presents them sorted by fit. Pick a match to run `$job-apply` on it directly.
 
+For repeatable local scraping and automation, use the deterministic scraper:
+
+```bash
+python3 scripts/scrape_jobs.py --broad
+```
+
+This reads `.agents/skills/job-scraper/search-queries.md`, updates the private
+runtime state in `job_scraper/seen_jobs.json`, and writes a private Markdown
+report to `job_scraper/latest_report.md`. Both files are ignored by Git.
+
 ### 5. Apply to a job
 
 ```bash
@@ -142,6 +152,7 @@ ai-job-search/
 │   └── README_SALARY_TOOL.md          # Salary tool setup instructions
 ├── scripts/
 │   ├── smoke_test.py                  # Codex migration smoke test
+│   ├── scrape_jobs.py                 # Deterministic job scraping + Markdown report
 │   ├── compile_cv.sh                  # Compile CV and check 2 pages
 │   ├── compile_cover_letter.sh        # Compile cover letter and check 1 page
 │   └── check_pdf_pages.py             # PDF page-count helper
@@ -208,6 +219,11 @@ The four Danish CLI tools in `.agents/skills/` (Jobbank, Jobdanmark, Jobindex, J
 
 For a **country-agnostic** starting point, the repo also includes **`linkedin-search`** — a job-search skill built on LinkedIn's public, unauthenticated `jobs-guest` endpoints. It is field-agnostic, has **zero runtime dependencies** (runs with just `bun`), and takes the search location as an explicit flag, so it works for any market out of the box (`-l "Berlin, Germany"`, `-l "Mumbai, Maharashtra, India"`, `-l "Remote"`, …). It is intended for **personal use only** — automated access is against LinkedIn's Terms of Service, so keep volume low. See `.agents/skills/linkedin-search/SKILL.md`.
 
+For scheduled runs, prefer `scripts/scrape_jobs.py --broad`. It keeps LinkedIn
+volume low, uses Jobindex embedded search data where available, deduplicates
+against both `job_scraper/seen_jobs.json` and `job_search_tracker.csv`, and
+reports only new matches unless you pass `--include-low`.
+
 ### Salary benchmarking
 
 The salary tool works with any salary data you provide (union statistics, Glassdoor exports, personal research, etc.). See `tools/README_SALARY_TOOL.md` for the expected format and setup. If you don't have salary data, the salary step is simply skipped.
@@ -220,7 +236,7 @@ Run the Codex migration smoke test after cloning, editing skills, or changing CL
 python3 scripts/smoke_test.py
 ```
 
-The smoke test checks Codex skill metadata, project guidance, stale Claude-only references in migrated skills, CLI import wiring, package metadata, and Python syntax. If Bun is not installed, CLI runtime checks are reported as skipped rather than failed.
+The smoke test checks Codex skill metadata, project guidance, stale Claude-only references in migrated skills, CLI import wiring, package metadata, scraper query configuration, and Python syntax. If Bun is not installed, CLI runtime checks are reported as skipped rather than failed.
 
 ### Starting over
 

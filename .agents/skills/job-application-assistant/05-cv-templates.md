@@ -105,12 +105,17 @@ Write 5-7 lines that function as an "elevator pitch": a concise, compelling intr
 
 **Create 2-3 profile statement templates for your main role types:**
 
-<!-- SETUP: These are populated based on your background -->
-**For [YOUR_PRIMARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_1]
+**For Data Scientist / ML Engineer roles:**
+> Data scientist and engineer with a background in machine learning, data pipelines, and mathematical modelling. I bring hands-on experience building ETL workflows, deploying and monitoring ML models, and applying Python-based data science tools to real industrial and research problems. My strongest edge is combining analytical depth with software implementation, from invoice classification and data pipelines to computer vision and applied ML for structural timber reuse.
 
-**For [YOUR_SECONDARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_2]
+**For Applied AI / Research Engineer roles:**
+> Applied AI researcher and engineer working at the intersection of machine learning, scientific modelling, and practical software systems. My experience spans reclaimed timber ML research, interactive explainable AI, computer vision for digital image correlation, and data-driven engineering workflows. I am strongest in roles that require both rigorous modelling and the ability to turn research ideas into working prototypes or tools.
+
+**For Technical Consultant / Solutions Engineer roles:**
+> Technical advisor and software engineer with experience translating engineering requirements into usable digital tools. I have led development of a facade design web application, collaborated with external stakeholders, and built engineering software that connects domain expertise with practical implementation. I bring a rare combination of structural engineering knowledge, data science, and full-stack development.
+
+**For Structural / Computational Engineering roles:**
+> Structural engineer and researcher specializing in timber structures, finite element modelling, computer vision, and applied machine learning. My work includes reclaimed timber reuse research, structural timber connections, full-scale timber wall testing, and browser-based parametric engineering tools. I am well suited for roles that combine structural analysis, sustainable engineering, and computational methods.
 
 ### Core Competencies / Skills Section (Best Practice)
 Reorder and emphasize based on the role. Use bold category labels.

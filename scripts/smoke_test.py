@@ -163,13 +163,35 @@ def check_package_json(report: Report) -> None:
 
 
 def check_python(report: Report) -> None:
-    files = [ROOT / "salary_lookup.py", ROOT / "tools" / "convert_salary_excel.py", Path(__file__).resolve()]
+    files = [
+        ROOT / "salary_lookup.py",
+        ROOT / "tools" / "convert_salary_excel.py",
+        ROOT / "scripts" / "scrape_jobs.py",
+        Path(__file__).resolve(),
+    ]
     cmd = [sys.executable, "-m", "py_compile", *map(str, files)]
     result = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True)
     if result.returncode == 0:
         report.ok("Python files compile")
     else:
         report.fail("Python compile failed: " + (result.stderr or result.stdout).strip())
+
+
+def check_scraper_config(report: Report) -> None:
+    path = ROOT / ".agents" / "skills" / "job-scraper" / "search-queries.md"
+    if not path.exists():
+        report.fail("job scraper search-queries.md is missing")
+        return
+    text = read(path)
+    placeholders = ["[YOUR_", "YOUR_PRIMARY", "YOUR_KEY", "YOUR_CITY", "YOUR_COUNTRY"]
+    stale = [placeholder for placeholder in placeholders if placeholder in text]
+    if stale:
+        report.fail("job scraper search queries still contain placeholders: " + ", ".join(stale))
+        return
+    if "visa sponsorship" not in text.lower() or "machine learning engineer" not in text.lower():
+        report.fail("job scraper search queries are missing configured role/visa filters")
+        return
+    report.ok("job scraper search queries are configured")
 
 
 def check_bun_help(report: Report) -> None:
@@ -214,6 +236,7 @@ def main() -> int:
     check_cli_imports(report)
     check_package_json(report)
     check_python(report)
+    check_scraper_config(report)
     check_bun_help(report)
     check_latex_tools(report)
 

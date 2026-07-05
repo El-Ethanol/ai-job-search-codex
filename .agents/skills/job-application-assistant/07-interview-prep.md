@@ -10,44 +10,87 @@ Keep answers to 1-2 minutes. Be specific. End with what you learned or would do 
 
 ## Ready-Made STAR Examples
 
-<!-- These are populated by $job-setup from your actual experience. Below are templates showing the format. -->
+Path A found strong STAR candidates but not enough detail to safely invent full stories. Complete the missing Situation/Task/Result details before using these in interviews.
 
-### 1. [PROJECT_NAME] ([SKILL_DEMONSTRATED])
-**S:** [CONTEXT - what was happening, what was the problem]
-**T:** [YOUR RESPONSIBILITY - what you specifically needed to do]
-**A:** [WHAT YOU DID - specific actions, tools, methods]
-**R:** [OUTCOME - measurable results, adoption, impact]
-**Use for:** "[QUESTION_TYPE_1]", "[QUESTION_TYPE_2]"
+### 1. EuroTec Facade Design Web Application (engineering software, stakeholder collaboration)
+**Source:** CV and LinkedIn, EuroTec GmbH.
+**What happened:** Musaab developed a web application for facade design using EuroTec facade system screws.
+**Why it matters:** Shows full-stack engineering, requirements gathering, domain expertise, and business impact.
+**S/T/A/R stub:**
+- Situation: EuroTec needed a facade design tool for its screw systems.
+- Task: [Add what Musaab was specifically responsible for and who needed the tool.]
+- Action: Led requirements gathering, system architecture design, implementation, testing, and stakeholder collaboration using Django, JavaScript, CSS, and HTML.
+- Result: The tool increased competitiveness in the European market and led to requests for client-specific versions.
+**Use for:** "Tell me about a product you built", "How do you work with stakeholders?", "Give an example of turning domain knowledge into software."
 
-### 2. [PROJECT_NAME] ([SKILL_DEMONSTRATED])
-**S:** [CONTEXT]
-**T:** [YOUR RESPONSIBILITY]
-**A:** [WHAT YOU DID]
-**R:** [OUTCOME]
-**Use for:** "[QUESTION_TYPE_1]", "[QUESTION_TYPE_2]"
+### 2. AILY Labs Invoice Classification Model (ML pipelines, deployment, monitoring)
+**Source:** CV, AILY Labs.
+**What happened:** Musaab worked on ETL pipelines and an invoice classification model during a part-time data science and AI internship.
+**Why it matters:** Shows applied data science, Python, ML monitoring, cloud/devops exposure, and cross-functional collaboration.
+**S/T/A/R stub:**
+- Situation: [Add the business or data context for invoice classification.]
+- Task: Develop and maintain scalable ETL pipelines and support ML model deployment/monitoring.
+- Action: Built Python-based data workflows, supported model deployment, monitored performance and data drift, and collaborated with AI engineers and developers.
+- Result: Invoice classification model achieved 87% accuracy.
+**Use for:** "Tell me about an ML project", "How do you ensure model quality?", "Describe a cross-functional technical project."
 
-### 3. [PROJECT_NAME] ([SKILL_DEMONSTRATED])
-**S:** [CONTEXT]
-**T:** [YOUR RESPONSIBILITY]
-**A:** [WHAT YOU DID]
-**R:** [OUTCOME]
-**Use for:** "[QUESTION_TYPE_1]", "[QUESTION_TYPE_2]"
+### 3. Aalborg Reclaimed Timber ML Research (research, sustainability, computer vision)
+**Source:** CV and LinkedIn, Aalborg University.
+**What happened:** Musaab researches machine learning models for structural reuse of reclaimed timber.
+**Why it matters:** Shows current research direction, sustainability angle, applied ML, and industry validation.
+**S/T/A/R stub:**
+- Situation: Reclaimed timber reuse needs reliable quality and load-bearing assessment.
+- Task: Research ML models and algorithms for timber quality and capacity assessment.
+- Action: Design models using imaging/sensor data, evaluate predictive performance and sustainability metrics, and work with industry partners on real datasets.
+- Result: [Add concrete result when available: model performance, publication, prototype, dataset, industry validation.]
+**Use for:** "Why this field?", "Describe your research", "How do you validate models in the real world?"
 
-<!-- Add more STAR examples as needed. Aim for 4-6 covering different competencies. -->
+### 4. University of Navarra Digital Image Correlation System (computer vision, experimental engineering)
+**Source:** CV, University of Navarra.
+**What happened:** Musaab developed a data acquisition system using computer vision for DIC on timber specimens.
+**Why it matters:** Shows bridge between structural testing, computer vision, Python/MATLAB, and experimental methods.
+**S/T/A/R stub:**
+- Situation: Timber connection experiments required measurement and analysis of specimen behaviour.
+- Task: Develop a data acquisition / DIC workflow for timber specimens.
+- Action: Used computer vision and tools including OpenCV, Python, MATLAB, and Abaqus alongside experimental testing and finite element modelling.
+- Result: [Add what the system enabled: measurement accuracy, experiment throughput, analysis quality, reports, paper, or adoption.]
+**Use for:** "Tell me about a technical challenge", "How do you combine software with engineering experiments?", "Describe your computer vision experience."
+
+### 5. Awatif.co Parametric Engineering Platform (startup initiative, TypeScript, finite element solver)
+**Source:** CV and LinkedIn, Awatif.co.
+**What happened:** Musaab co-founded a web-based parametric structural engineering platform.
+**Why it matters:** Shows initiative, product thinking, engineering automation, TypeScript, Three.js, Node.js, and finite element solver work.
+**S/T/A/R stub:**
+- Situation: Structural engineers and non-programmers need accessible automation and parametric engineering tools.
+- Task: Co-found and build a platform integrating modelling, analysis, design, and visualization.
+- Action: Implemented a finite element solver for plates, built 3D visualizations in the browser, and developed a marketplace concept for parametric apps.
+- Result: [Add usage, demo, customer/user feedback, technical milestone, or current platform status.]
+**Use for:** "Tell me about initiative", "Describe a side project", "How do you make complex tools usable?"
+
+### 6. UAB Thesis on Belief Revision for Interactive Explainable AI (research, symbolic AI, prototyping)
+**Source:** LinkedIn and diploma, Universitat Autonoma de Barcelona / IIIA-CSIC.
+**What happened:** Musaab completed a Master's thesis on belief revision for interactive explainable AI.
+**Why it matters:** Shows AI research depth beyond standard ML tooling, including symbolic AI and human-machine explanation dynamics.
+**S/T/A/R stub:**
+- Situation: Static, machine-centric explanations can limit interactive human understanding of AI systems.
+- Task: Develop a dynamic logic-based formalism for more interactive explainable AI.
+- Action: Integrated belief revision strategies, created structured representations for information exchange, and designed/tested a prototype.
+- Result: Thesis completed with grade 9.0 / A.
+**Use for:** "Describe your AI research", "How do you approach explainability?", "Tell me about a complex theoretical project."
 
 ## Common Tough Questions
 
 ### "Why did you leave [previous company]?"
-> [PREPARE YOUR ANSWER - be honest, forward-looking, no negativity about former employer]
+> Prepare a concise, forward-looking answer for each transition. Do not sound negative about former employers. Current likely framing: each move increased the connection between engineering, data science, applied AI, and practical software.
 
 ### "You don't have [specific skill/experience]."
-> [PREPARE YOUR ANSWER - acknowledge the gap, bridge to adjacent experience, show willingness to learn]
+> Acknowledge the exact gap, then bridge to adjacent evidence. Example pattern: "I have not owned X at that scale yet. The closest work I have done is Y, where I used Z. I would ramp up by..."
 
 ### "Where do you see yourself in 5 years?"
-> [PREPARE YOUR ANSWER - show ambition aligned with the role's growth path]
+> Needs user input. Draft around applied AI, engineering software, and research-to-product work only if that matches Musaab's actual goals.
 
 ### "What's your biggest weakness?"
-> [PREPARE YOUR ANSWER - genuine weakness with concrete mitigation strategy]
+> Needs user input. Pick a real but manageable weakness with a concrete mitigation strategy. Avoid fake weaknesses.
 
 ### "Why this company specifically?"
 > Customize per company. Must reference: specific projects, company values, market position, or team structure. Never give a generic answer.

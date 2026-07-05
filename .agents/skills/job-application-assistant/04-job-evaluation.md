@@ -16,9 +16,9 @@ How well do the required/preferred skills align with the candidate's capabilitie
 | 40-59 | Partial match, significant upskilling needed |
 | 0-39 | Fundamental mismatch |
 
-**Strong match areas:** [YOUR_PRIMARY_SKILLS]
-**Moderate match areas:** [YOUR_SECONDARY_SKILLS]
-**Weak match areas:** [SKILLS_YOU_LACK]
+**Strong match areas:** machine learning, data science, Python, computer vision, structural engineering, timber structures, finite element modelling, scientific computing, applied AI, modelling and simulation, mathematical modelling.
+**Moderate match areas:** full-stack development, engineering software, technical advisory, ETL pipelines, ML deployment and monitoring, cloud/devops, stakeholder collaboration, interactive explainable AI, symbolic AI concepts.
+**Weak or needs-confirmation areas:** production MLOps at large scale, enterprise architecture, formal people management, roles requiring native/professional Danish, pure frontend/product design roles, roles with no technical or analytical depth.
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for?
@@ -30,9 +30,9 @@ Does work history align with what they're looking for?
 | 40-59 | Adjacent experience, would need to make the case |
 | 0-39 | Unrelated experience |
 
-**Strong:** [YOUR_DIRECT_EXPERIENCE_DOMAINS]
-**Moderate:** [YOUR_ADJACENT_EXPERIENCE]
-**Entry-level:** [ROLES_WITH_LIMITED_EXPERIENCE]
+**Strong:** applied ML for structural engineering, reclaimed timber research, structural timber connections, engineering software, data science pipelines, full-stack engineering tools for structural design, scientific modelling.
+**Moderate:** technical consulting, solutions engineering, cloud-based data workflows, production ML monitoring, AI explainability, automation platforms, startup/product-oriented engineering.
+**Entry-level or needs-careful framing:** formal software engineering roles requiring many years in a large product organization, senior MLOps/platform ownership, people-management roles, highly specialized enterprise frontend roles.
 
 ### 3. Behavioral/Culture Fit (0-100)
 Does the role and company culture match the behavioral profile?
@@ -49,8 +49,11 @@ Does the role and company culture match the behavioral profile?
 ### 4. Location & Logistics (Pass/Fail + Notes)
 - Within commute range: PASS
 - Remote with occasional office: PASS
-- Requires relocation: FAIL (deal-breaker)
+- Requires relocation: PASS if the role is otherwise strong and visa/work-authorization support is realistic
 - Frequent international travel: FLAG (discuss with user)
+- Does not support visa/work authorization when needed: FAIL
+
+**Known baseline:** Musaab is based in Aalborg, North Denmark Region, Denmark. Preferred geography is Aalborg first, North Jutland second, all Denmark third. Musaab is open to relocation, but visa sponsorship / work-authorization support is a must-have.
 
 ### 5. Career Alignment & Motivation (0-100)
 Does this role advance career goals and contain tasks that energize?
@@ -63,19 +66,19 @@ Does this role advance career goals and contain tasks that energize?
 | 0-39 | Dead end or backwards step |
 
 **Career goals:**
-- [YOUR_CAREER_GOAL_1]
-- [YOUR_CAREER_GOAL_2]
-- [YOUR_CAREER_GOAL_3]
+- Machine learning engineer roles connected to real-world engineering, computer vision, data pipelines, or applied AI.
+- Software engineer roles where engineering domain knowledge, data science, or scientific computing is useful.
+- Structural engineer roles, especially computational, timber, sustainability, or modelling-focused roles.
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
-- Tasks that energize: [YOUR_ENERGIZING_TASKS]
-- Tasks that drain: [YOUR_DRAINING_TASKS]
-- Non-task factors: leadership style, department culture, company values, degree of autonomy
+- Tasks that energize: Needs user confirmation. Current signals point to modelling, applied ML, automation, engineering software, computer vision, and turning complex technical work into useful tools.
+- Tasks that drain: Needs user input.
+- Non-task factors: visa sponsorship / work-authorization support is mandatory. Prefer Aalborg, North Jutland, then all Denmark. Open to relocation for strong roles.
 
 **Life situation alignment:** Consider personal constraints:
-- **Security**: [YOUR_FINANCIAL_SITUATION_CONTEXT]
-- **Flexibility**: [YOUR_SCHEDULE_CONSTRAINTS]
-- **Professional development**: [YOUR_GROWTH_PRIORITIES]
+- **Security**: visa sponsorship / work-authorization support is a must-have.
+- **Flexibility**: Needs user input.
+- **Professional development**: likely strong interest in applied AI, data science, engineering software, and research-to-product work; confirm with Musaab before treating as a hard filter.
 
 ### 6. Salary Benchmark (Optional)
 

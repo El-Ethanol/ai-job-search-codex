@@ -13,6 +13,8 @@ job-search state.
 - Use `$job-application-assistant` or `$job-apply` for job fit evaluation,
   tailored CVs, cover letters, reviewer passes, and interview prep.
 - Use `$job-scraper` to find and deduplicate job postings.
+- Use `python3 scripts/scrape_jobs.py --broad` for deterministic scheduled job
+  scraping and Markdown reporting.
 - Use `$profile-expand` to enrich the profile from documents and public
   professional sources.
 - Use `$upskill` to identify skill gaps and write learning-plan reports.
@@ -100,6 +102,10 @@ private files are accidentally staged.
 - If Bun is unavailable, report that TypeScript job-search CLIs could not be run
   locally.
 - If LaTeX is unavailable, report that PDF compilation could not be verified.
+- For recurring job search automation, run `python3 scripts/scrape_jobs.py
+  --broad`, then summarize `job_scraper/latest_report.md`. Do not submit
+  applications automatically; wait for the user to choose a posting and approve
+  `$job-apply`.
 
 ## Codex Collaboration
 

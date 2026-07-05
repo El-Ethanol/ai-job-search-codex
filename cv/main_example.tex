@@ -1,8 +1,8 @@
-%% Example CV - [YOUR_NAME]
-%% Comprehensive overview of all competencies, experience, and achievements.
+%% Example CV - Musaab Mahjoub
+%% Comprehensive overview of competencies, experience, and education.
 %% Use as a master reference when tailoring role-specific CVs.
 %%
-%% SETUP: Run /setup to populate this with your actual information.
+%% SETUP: Generated from $job-setup document import.
 %% Compile with: lualatex main_example.tex
 %% (pdflatex often fails on modern MiKTeX with fontawesome5 font-expansion errors.)
 
@@ -10,9 +10,6 @@
 \moderncvstyle{banking}
 \moderncvcolor{blue}
 
-% Force both first and last name AND section headings to render in moderncv
-% blue (color1). Default banking on lualatex+MiKTeX leaves these black, which
-% looks inconsistent with the rest of the blue accent scheme.
 \renewcommand*{\firstnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
 \renewcommand*{\lastnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
 \renewcommand*{\sectionstyle}[1]{{\sectionfont\color{color1}#1}}
@@ -24,141 +21,125 @@
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=blue,
-    pdftitle={[YOUR_NAME] - CV},
+    pdftitle={Musaab Mahjoub - CV},
     pdfpagemode=FullScreen,
 }
 \usepackage[scale=0.80]{geometry}
 \usepackage{import}
 
 % personal data
-\name{[First]}{[Last]}
-\address{[Your Address, City, Country]}{}{}
-\phone[mobile]{[+XX XXXXXXXXXX]}
-\email{[your.email@example.com]}
-\extrainfo{\href{[https://linkedin.com/in/your-profile]}{LinkedIn}, \href{[https://github.com/your-username]}{GitHub}}
+\name{Musaab}{Mahjoub}
+\address{Aalborg, North Denmark Region, Denmark}{}{}
+\phone[mobile]{+45 91110539}
+\email{musab.ahmed1996@gmail.com}
+\extrainfo{\href{https://linkedin.com/in/mahjoubmusaab}{LinkedIn}, \href{https://github.com/gottn}{GitHub}}
 
 \begin{document}
 
 \makecvtitle
 
-% ============================================================
-%     PROFILE STATEMENT
-% ============================================================
-
-\vspace{6pt}
-\small{[Write a 3-5 line profile statement tailored to the role you're applying for. Focus on what makes you uniquely qualified. Example: "Data scientist with a PhD in [field] and X years of industry experience. Combines deep domain expertise in [domain] with strong applied machine learning and Python development skills. Experienced in developing end-to-end ML pipelines, from data ingestion to stakeholder-facing dashboards."]}
-
-% ============================================================
-%     CORE COMPETENCIES
-% ============================================================
+\vspace{4pt}
+\small{Engineer and data scientist with experience across machine learning, software engineering, and structural engineering. I combine Python-based data science, computer vision, finite element modelling, and full-stack development to turn complex engineering problems into practical tools. My work spans applied ML for reclaimed timber, ETL and invoice-classification pipelines, engineering software at EuroTec, and the Awatif.co parametric structural engineering platform.}
 
 \section{Core Competencies}
 \vspace{1pt}
 \begin{itemize}
-
-\item \textbf{[Skill Category 1]}: [Specific skills, frameworks, tools. Be concrete.]
-
-\item \textbf{[Skill Category 2]}: [Specific skills, frameworks, tools.]
-
-\item \textbf{[Skill Category 3]}: [Specific skills, frameworks, tools.]
-
-\item \textbf{[Skill Category 4]}: [Domain expertise, methods, approaches.]
-
-\item \textbf{[Skill Category 5]}: [Tools, platforms, software.]
-
+\item \textbf{Machine learning and data science}: Python, PyTorch, scikit-learn, pandas, ETL pipelines, model deployment, data drift monitoring, invoice classification.
+\item \textbf{Computer vision and scientific computing}: OpenCV, MATLAB, C/C++, digital image correlation, imaging and sensor-data workflows.
+\item \textbf{Software engineering}: TypeScript, JavaScript, Django, Node.js, HTML, CSS, Git, Docker, AWS.
+\item \textbf{Structural engineering}: timber structures, reclaimed timber reuse, structural connections, finite element modelling, sustainable structural engineering.
+\item \textbf{Engineering software}: parametric engineering tools, browser-based 3D visualization, Three.js, Van.js, finite element solver development.
 \end{itemize}
-
-% ============================================================
-%     PROFESSIONAL EXPERIENCE
-% ============================================================
 
 \section{Professional Experience}
 \vspace{3pt}
 \begin{itemize}
 
-% --- Most Recent Role ---
-\item{\cventry{[YYYY--Present]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\item{\cventry{Feb 2025--Present}{PhD Fellow}{Aalborg University}{Aalborg, Denmark}{}{\vspace{1pt}
 \begin{itemize}
-    \item [Achievement or responsibility 1 - be specific, use numbers where possible]
-    \item [Achievement or responsibility 2]
-    \item [Achievement or responsibility 3]
-    \item [Achievement or responsibility 4]
+    \item Researching machine learning models for the structural reuse of reclaimed timber, with focus on predictive performance and sustainability metrics.
+    \item Designing algorithms to assess timber quality and load-bearing capacity from imaging and sensor data.
+    \item Collaborating with industry partners to validate models on real-world reclaimed timber datasets.
+    \item Using Python, PyTorch, OpenCV, and scikit-learn for applied ML and computer vision workflows.
 \end{itemize}}}
 
 \vspace{3pt}
 
-% --- Previous Role ---
-\item{\cventry{[YYYY--YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\item{\cventry{Oct 2023--Jan 2025}{Technical Advisor and Full Stack Developer}{EuroTec GmbH}{Hagen, Germany / Remote}{}{\vspace{1pt}
 \begin{itemize}
-    \item [Achievement or responsibility 1]
-    \item [Achievement or responsibility 2]
-    \item [Achievement or responsibility 3]
+    \item Developed a facade-design web application for EuroTec facade system screws, increasing competitiveness in the European market and prompting requests for client-specific versions.
+    \item Led requirements gathering, system architecture, implementation, testing, and maintenance for engineering software.
+    \item Provided technical guidance and troubleshooting to internal teams and external clients.
+    \item Used Django, JavaScript, CSS, and HTML.
 \end{itemize}}}
 
 \vspace{3pt}
 
-% --- Earlier Role ---
-\item{\cventry{[YYYY--YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\item{\cventry{Feb 2024--Jun 2024}{Data Science and AI Intern}{AILY Labs}{Barcelona, Spain / Part-time}{}{\vspace{1pt}
 \begin{itemize}
-    \item [Achievement or responsibility 1]
-    \item [Achievement or responsibility 2]
+    \item Developed and maintained scalable ETL pipelines for data extraction, transformation, and loading.
+    \item Deployed and monitored an invoice-classification model that achieved 87\% accuracy.
+    \item Collaborated with AI engineers and developers to integrate and optimize machine learning pipelines.
+    \item Used AWS, Python, scikit-learn, and Docker.
+\end{itemize}}}
+
+\vspace{3pt}
+
+\item{\cventry{Sep 2023--Present}{Co-Founder}{Awatif.co}{Web-based platform}{}{\vspace{1pt}
+\begin{itemize}
+    \item Co-founded a web-based parametric structural engineering platform for modelling, analysis, and design automation.
+    \item Implemented a finite element solver for modelling plates and built browser-based 3D visualizations.
+    \item Developed a marketplace concept for parametric engineering apps for engineers and non-programmers.
+    \item Used TypeScript, Three.js, Node.js, and Van.js.
+\end{itemize}}}
+
+\vspace{3pt}
+
+\item{\cventry{Sep 2022--Sep 2023}{Research Assistant}{University of Navarra}{Pamplona, Spain}{}{\vspace{1pt}
+\begin{itemize}
+    \item Researched structural timber connections through experimental testing and finite element modelling.
+    \item Developed a computer-vision data acquisition system for digital image correlation on timber specimens.
+    \item Used OpenCV, Python, MATLAB, and Abaqus.
+\end{itemize}}}
+
+\vspace{3pt}
+
+\item{\cventry{Aug 2021--Jun 2022}{Project Assistant}{Linnaeus University}{Vaxjo, Sweden}{}{\vspace{1pt}
+\begin{itemize}
+    \item Performed full-scale tests on timber-framed shear walls and developed numerical models of their mechanical behaviour.
+    \item Analysed experimental data and drafted reports, reviews, and summaries for industry-led research projects.
+    \item Used Python, MATLAB, and Abaqus.
 \end{itemize}}}
 
 \end{itemize}
-
-% ============================================================
-%     EDUCATION
-% ============================================================
 
 \section{Education}
 \vspace{1pt}
 \begin{itemize}
 
-\item{\cventry{[YYYY--YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-Thesis: ``[Thesis Title].'' [Brief description of research focus.]
+\item{\cventry{Sep 2023--Jul 2024}{M.Sc. Modelling for Science and Engineering, Specialisation in Data Science}{Universitat Autonoma de Barcelona}{Barcelona, Spain}{}{\vspace{1pt}
+Thesis: ``Belief Revision for Interactive Explainable AI.'' Key topics included optimisation, applied stochastic processes, mathematics and big data, parallel programming, distributed systems, and research and innovation.
 }}
 
 \vspace{3pt}
 
-\item{\cventry{[YYYY--YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-[Brief description or key topics.]
+\item{\cventry{2019--2021}{M.Sc. Sustainable Structural Engineering}{Linnaeus University}{Vaxjo, Sweden}{}{\vspace{1pt}
+Thesis: ``FE modelling of glulam beams with mechanical slotted-in steel plate connections.'' Key topics included finite element methods, timber structures, steel structures, concrete structures, structural dynamics, and building physics.
+}}
+
+\vspace{3pt}
+
+\item{\cventry{2011--2016}{B.E. (Honors) Civil Engineering, Structural Engineering}{Sudan University of Science and Technology}{Khartoum, Sudan}{}{\vspace{1pt}
+Key topics included construction design, statics, mechanics of materials, steel and concrete structures, calculus, linear algebra, differential equations, and probability and statistics.
 }}
 
 \end{itemize}
 
-% ============================================================
-%     LANGUAGES
-% ============================================================
-
 \section{Languages}
 \vspace{1pt}
 \begin{itemize}
-\item [Language 1] (native), [Language 2] (fluent), [Language 3] (intermediate).
+\item Arabic (native), English (fluent), Danish (intermediate).
 \end{itemize}
-
-% ============================================================
-%     PUBLICATIONS (optional)
-% ============================================================
-
-\section{Publications}
-\vspace{1pt}
-\begin{itemize}
-\item [Author(s)] ([Year]). [Title]. [Journal/Conference]. \href{[DOI_URL]}{DOI link}
-\end{itemize}
-
-% ============================================================
-%     HONORS AND AWARDS (optional)
-% ============================================================
-
-\section{Honors and Awards}
-\vspace{1pt}
-\begin{itemize}
-\item{\textbf{[Award Name]} -- [Event/Organization] ([Year]).}
-\end{itemize}
-
-% ============================================================
-%     REFERENCES
-% ============================================================
 
 \section{References}
 \vspace{1pt}

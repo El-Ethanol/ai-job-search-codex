@@ -128,6 +128,16 @@ python3 scripts/smoke_test.py
 
 This verifies the Codex skill layout, CLI import wiring, package metadata, and Python helpers. If Bun is not installed, CLI runtime checks are skipped and reported clearly.
 
+Then test the deterministic job scraper:
+
+```bash
+python3 scripts/scrape_jobs.py --broad
+```
+
+This reads your configured search queries, updates `job_scraper/seen_jobs.json`,
+and writes `job_scraper/latest_report.md`. These files are private runtime
+state and are ignored by Git.
+
 Find a job posting you're interested in, then:
 
 ```
@@ -147,7 +157,24 @@ Codex will:
 4. Run a reviewer pass that critiques the drafts
 5. Revise and present the final output
 
-## 7. Compile your documents
+## 7. Automate the search loop
+
+In the Codex app, create a recurring automation that runs the scraper on the
+workspace. A good weekday prompt is:
+
+```
+In /path/to/ai-job-search, run:
+python3 scripts/scrape_jobs.py --broad
+
+Summarize job_scraper/latest_report.md. Only surface new high/medium matches,
+and flag visa sponsorship or Danish-language risks.
+```
+
+Keep application submission manual. The automated pipeline should find,
+deduplicate, rank, and report jobs; `$job-apply` should draft and verify
+materials only after you choose a posting.
+
+## 8. Compile your documents
 
 After `$job-apply` creates the LaTeX files:
 
