@@ -11,6 +11,7 @@ documents/
 ├── cv/                          # Your CV files (PDF or LaTeX)
 ├── linkedin/                    # LinkedIn profile export (PDF)
 ├── diplomas/                    # Degree certificates and transcripts
+├── certificates/                # Professional course certificates
 ├── references/                  # Reference letters
 ├── applications/                # Past job applications
 │   └── <company>_<role>/
@@ -77,6 +78,26 @@ Degree certificates, transcripts, and any official qualifications.
 - Institution names (official spelling)
 
 **Naming:** Use descriptive names, e.g. `msc_physics_ucph_2025.pdf`, `bsc_physics_ucph_2016.pdf`. Naming does not affect parsing.
+
+---
+
+## certificates/
+
+Professional course certificates, licenses, and short-program credentials.
+
+**Supported formats:** `.pdf`, `.png`, `.jpg`, `.txt`, `.md`
+
+**What `$job-setup` extracts:**
+- Certificate title
+- Issuer or platform
+- Completion date
+- Course list or specialization modules
+- Verification link, if visible
+- Skills that can support targeted applications
+
+**Naming:** Use descriptive names with dates, e.g. `2026-06-11_coursera_ibm_building_ai_agents_agentic_workflows.pdf`.
+
+**Tip:** These help most when they support a specific job requirement that is not yet strongly proven by work experience. They should support the CV story, not replace concrete project or job evidence.
 
 ---
 
@@ -155,7 +176,7 @@ Any signal about what they valued or didn't?
 | `.md` | Yes | Plain text |
 | `.txt` | Yes | Plain text |
 | `.docx` | No | Convert to PDF before placing here |
-| `.png` / `.jpg` | No | Scanned documents won't be parsed — use text PDFs |
+| `.png` / `.jpg` | Partly | Screenshots can be useful evidence, but text PDFs are easier to parse |
 
 ---
 
@@ -171,5 +192,6 @@ The command is designed to be re-run as your document collection grows. Each run
 **When to re-run:**
 - After adding a new LinkedIn export
 - After adding reference letters
+- After adding new certificates
 - After recording outcomes for completed applications
 - After updating your master CV

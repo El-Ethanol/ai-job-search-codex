@@ -145,6 +145,7 @@ ai-job-search/
 │   ├── cv/                            # Master CV (PDF or .tex)
 │   ├── linkedin/                      # LinkedIn profile export (PDF)
 │   ├── diplomas/                      # Degree certificates and transcripts
+│   ├── certificates/                  # Professional course certificates
 │   ├── references/                    # Reference letters
 │   └── applications/                  # Past application records (<company>_<role>/)
 ├── salary_lookup.py                   # Salary benchmarking tool (BYO data)

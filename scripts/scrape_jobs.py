@@ -59,6 +59,7 @@ class Job:
     description: str
     fit: str
     fit_reason: str
+    seniority_risk: str
     visa_risk: str
     danish_risk: str
     status: str = "new"
@@ -74,6 +75,7 @@ class Job:
             "deadline": self.deadline,
             "first_seen": first_seen or TODAY,
             "fit": self.fit,
+            "seniority_risk": self.seniority_risk,
             "status": self.status,
         }
 
@@ -228,6 +230,54 @@ def danish_risk(title: str, text: str) -> str:
     return "Low/unknown Danish risk."
 
 
+def seniority_risk(title: str, text: str) -> str:
+    title_lower = title.lower()
+    lower = f"{title} {text}".lower()
+
+    junior_terms = [
+        "junior",
+        "graduate",
+        "entry level",
+        "entry-level",
+        "associate",
+        "early career",
+        "newly graduated",
+        "nyuddannet",
+    ]
+    if any(term in title_lower for term in junior_terms):
+        return "Low/unknown seniority risk."
+
+    title_patterns = [
+        r"\bsr\.?\b",
+        r"\bsenior\b",
+        r"\bstaff\b",
+        r"\bprincipal\b",
+        r"\blead\b",
+        r"\bhead\b",
+        r"\bdirector\b",
+        r"\bmanager\b",
+        r"\barchitect\b",
+        r"\berfaren\b",
+        r"\bchef\b",
+        r"\barkitekt\b",
+    ]
+    title_hits = [pattern for pattern in title_patterns if re.search(pattern, title_lower)]
+    if title_hits:
+        return "High seniority risk: title indicates senior/lead/manager-level scope."
+
+    year_patterns = [
+        r"\b(?:at least|minimum|min\.?|over|more than)\s+([6-9]|1[0-9])\+?\s*(?:years|yrs)\b",
+        r"\b([6-9]|1[0-9])\+?\s*(?:years|yrs)\s+(?:of\s+)?(?:relevant\s+|professional\s+|industry\s+)?experience\b",
+        r"\b([6-9]|1[0-9])\+?\s*(?:years|yrs)\s+of(?:\s+[a-z0-9+#./-]+){0,8}\s+experience\b",
+        r"\b([6-9]|1[0-9])\+?\s*(?:års|år)\s+(?:relevant\s+|professionel\s+)?(?:erfaring|erhvervserfaring)\b",
+        r"\bmany years of (?:relevant\s+|professional\s+|industry\s+)?experience\b",
+    ]
+    if any(re.search(pattern, lower) for pattern in year_patterns):
+        return "High seniority risk: posting appears to require 6+ years or equivalent senior experience."
+
+    return "Low/unknown seniority risk."
+
+
 def classify_fit(title: str, description: str, company: str, location: str | None) -> tuple[str, str]:
     lower = f"{title} {description} {company} {location or ''}".lower()
     title_lower = title.lower()
@@ -235,7 +285,10 @@ def classify_fit(title: str, description: str, company: str, location: str | Non
     if any(term in lower for term in ["student", "student assistant", "internship", "praktik"]):
         return "low", "Low: student/internship signal."
 
-    senior = any(term in title_lower for term in ["senior", "lead", "principal", "manager"])
+    senior = seniority_risk(title, description).startswith("High seniority risk")
+    if senior:
+        return "low", "Low: likely senior/stretch role; hidden by default unless stretch roles are explicitly requested."
+
     direct_ml_title = any(
         term in title_lower
         for term in ["machine learning", "ai engineer", "ai developer", "data scientist", "applied ai"]
@@ -275,17 +328,13 @@ def classify_fit(title: str, description: str, company: str, location: str | Non
     ]
 
     if direct_ml_title:
-        if senior:
-            return "medium", "Medium: direct AI/ML fit but seniority needs checking."
         return "high", "High: direct AI/ML target match."
     if direct_structural_title:
-        if senior:
-            return "medium", "Medium: structural fit but seniority/language requirements need checking."
         return "high", "High: direct structural engineering target match."
     if direct_software_title and any(term in lower for term in strong_body_terms):
         return "high", "High: software role with strong engineering/data overlap."
     if any(term in lower for term in strong_body_terms):
-        return "medium" if senior else "high", "High: directly overlaps configured technical strengths."
+        return "high", "High: directly overlaps configured technical strengths."
     if direct_software_title or any(term in lower for term in adjacent_terms):
         return "medium", "Medium: adjacent software/consulting fit; check domain depth."
     return "low", "Low: weak overlap with configured targets."
@@ -327,6 +376,7 @@ def parse_jobindex(query: Query, *, max_rows: int) -> tuple[list[Job], str | Non
         description = strip_tags(str(row.get("html") or ""))
         job_url = str(row.get("share_url") or row.get("apply_url") or row.get("url") or "")
         fit, fit_reason = classify_fit(title, description, company, location)
+        role_seniority_risk = seniority_risk(title, description)
         key = f"jobindex:{row.get('tid') or job_url}"
         jobs.append(
             Job(
@@ -342,6 +392,7 @@ def parse_jobindex(query: Query, *, max_rows: int) -> tuple[list[Job], str | Non
                 description=description,
                 fit=fit,
                 fit_reason=fit_reason,
+                seniority_risk=role_seniority_risk,
                 visa_risk=visa_risk(description),
                 danish_risk=danish_risk(title, description),
             )
@@ -423,6 +474,7 @@ def parse_linkedin(query: Query, *, max_rows: int, detail_delay: float) -> tuple
             description = ""
 
         fit, fit_reason = classify_fit(title, description, company, job_location)
+        role_seniority_risk = seniority_risk(title, description)
         jobs.append(
             Job(
                 key=f"linkedin:{job_id}",
@@ -437,6 +489,7 @@ def parse_linkedin(query: Query, *, max_rows: int, detail_delay: float) -> tuple
                 description=description,
                 fit=fit,
                 fit_reason=fit_reason,
+                seniority_risk=role_seniority_risk,
                 visa_risk=visa_risk(description),
                 danish_risk=danish_risk(title, description),
             )
@@ -520,7 +573,7 @@ def render_report(
         "",
         f"Fetched {fetched_count} unique postings. Found {new_count} new postings.",
         f"Showing {len(presented)} matches ({high} high, {medium} medium, {low} low).",
-        f"Hidden low-fit matches: {low_count if not include_low else 0}.",
+        f"Hidden low/stretch matches: {low_count if not include_low else 0}.",
         "",
         "Visa note: unless a row says otherwise, sponsorship/work authorization was not stated.",
         "",
@@ -543,8 +596,10 @@ def render_report(
     for idx, job in enumerate(presented, 1):
         risks = "; ".join(
             part
-            for part in [job.visa_risk, job.danish_risk]
-            if part and "Low/unknown Danish risk" not in part
+            for part in [job.seniority_risk, job.visa_risk, job.danish_risk]
+            if part
+            and "Low/unknown seniority risk" not in part
+            and "Low/unknown Danish risk" not in part
         )
         if not risks:
             risks = "visa unknown"
@@ -571,7 +626,7 @@ def render_report(
                     f"### {job.title} - {job.company}",
                     f"- {job.fit_reason}",
                     f"- Query/source: {job.query} via {job.source}.",
-                    f"- Risk check: {job.visa_risk} {job.danish_risk}",
+                    f"- Risk check: {job.seniority_risk} {job.visa_risk} {job.danish_risk}",
                     "",
                 ]
             )

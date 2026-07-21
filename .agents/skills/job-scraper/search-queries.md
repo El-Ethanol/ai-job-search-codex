@@ -1,9 +1,13 @@
 # Search Queries for Job Scraper
 
 Profile baseline: Musaab Mahjoub, Aalborg-based engineer targeting machine
-learning engineer, software engineer, and structural engineer roles. Search
+learning engineer, software engineer, quantitative trading / quantitative
+research, and structural engineer roles. Search
 geography priority: Aalborg first, North Jutland second, all Denmark third.
 Visa sponsorship / work-authorization support is a must-have.
+Default target level: early-career to mid-level. Avoid senior/staff/principal/
+lead/manager/architect roles and postings requiring roughly 6+ years of
+experience unless Musaab explicitly asks for stretch roles.
 
 ## Search Sites
 
@@ -21,7 +25,7 @@ Secondary:
 
 ## Query Categories
 
-Run the top three priority categories by default. Use `broad` to include all
+Run the top four priority categories by default. Use `broad` to include all
 categories. Prefer jobs posted within the last 14 days.
 
 ### Priority 1: Machine Learning Engineer / Applied AI
@@ -48,6 +52,8 @@ Useful variants when results are thin:
 - scikit-learn
 - Python data science
 - MLOps, but only if the posting does not require senior platform ownership
+- junior machine learning engineer
+- associate data scientist
 
 ### Priority 2: Software Engineer / Engineering Software
 
@@ -99,7 +105,37 @@ Useful variants:
 - structural analysis
 - Abaqus
 
-### Priority 4: Technical Consultant / Solutions Engineer
+### Priority 4: Quantitative Trading / Quantitative Research
+
+These match Musaab's mathematical modelling, Python, machine learning,
+optimization, statistics, and data-driven decision-making interests. Treat as a
+new career direction, so prioritize junior, graduate, analyst, researcher, and
+ordinary quant roles over senior trader roles.
+
+```text
+site:jobindex.dk "quantitative analyst" Denmark
+site:jobindex.dk "quantitative developer" Denmark
+site:jobindex.dk "quantitative researcher" Denmark
+site:jobindex.dk "trading analyst" Denmark
+site:linkedin.com/jobs "quantitative analyst" Denmark
+site:linkedin.com/jobs "quantitative developer" Denmark
+site:linkedin.com/jobs "quantitative researcher" Denmark
+site:linkedin.com/jobs "trading analyst" Denmark
+site:jobbank.dk "quantitative analyst" Denmark
+site:jobnet.dk "quantitative analyst" Denmark
+```
+
+Useful variants:
+- quant developer
+- algorithmic trading
+- systematic trading
+- market risk analyst
+- energy trading analyst
+- Python finance
+- stochastic modelling
+- optimization
+
+### Priority 5: Technical Consultant / Solutions Engineer
 
 Use in broad searches. These roles may fit if they involve engineering,
 software, data, or applied AI rather than generic sales.
@@ -113,7 +149,7 @@ site:linkedin.com/jobs "solutions engineer" Denmark
 site:jobbank.dk "technical consultant" Denmark
 ```
 
-### Priority 5: Visa Sponsorship / International Candidate Filters
+### Priority 6: Visa Sponsorship / International Candidate Filters
 
 Use these as additional checks, not as the only search strategy. Many relevant
 postings do not mention sponsorship directly.
@@ -142,6 +178,9 @@ and work authorization needs.
 - Visa sponsorship / work-authorization support must be feasible.
 - Prefer roles in English, or roles where intermediate Danish is acceptable.
 - For Danish-heavy postings, flag language as a risk unless the employer clearly accepts English-speaking candidates.
+- Hide senior/staff/principal/lead/manager/architect roles by default.
+- Hide roles asking for 6+ years, many years, or equivalent senior ownership by default.
+- Prefer junior, graduate, associate, early-career, and ordinary mid-level roles over stretch senior roles.
 - Exclude closed postings, expired deadlines, and roles that are clearly not open to international candidates when work authorization is required.
 
 ## Date Filter
@@ -159,4 +198,5 @@ Examples:
 - `$job-scraper machine learning` -> Priority 1 plus computer vision / Python variants.
 - `$job-scraper software` -> Priority 2 plus Django / TypeScript variants.
 - `$job-scraper structural` -> Priority 3 plus timber / finite element variants.
+- `$job-scraper quant` -> Priority 4 plus Python finance / optimization variants.
 - `$job-scraper broad` -> all priority categories.

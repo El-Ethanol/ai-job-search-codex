@@ -61,6 +61,7 @@ For each new job, do a rapid fit check (NOT the full evaluation from `04-job-eva
 - **High match**: Role directly involves your core skills
 - **Medium match**: Role is adjacent to your experience
 - **Low match**: Role requires significant skills you lack
+- **Low/stretch by default**: Title or posting asks for senior, staff, principal, lead, manager, architect, or roughly 6+ years of experience. Do not present these as high/medium matches unless the user explicitly asks for stretch roles.
 
 ### Step 4: Deduplicate & Store
 
@@ -117,6 +118,7 @@ If the user decides to apply to any job, add a row to `job_search_tracker.csv`.
 1. **Never fabricate job postings.** Only present jobs found via actual web search/web page fetch results.
 2. **Respect deduplication.** Always check seen_jobs.json AND job_search_tracker.csv before presenting.
 3. **Focus on configured geographic area.** Skip jobs that require relocation or are clearly outside commute range.
-4. **Only open positions.** Skip postings with expired deadlines or those marked as closed.
-5. **Be efficient with web page fetch.** Don't fetch every search result - use titles and snippets to pre-filter before fetching.
-6. **Parallel searches.** Use the Codex subagent workflow or parallel web search calls to speed up the search phase.
+4. **Avoid likely rejection traps.** Hide senior/staff/principal/lead/manager/architect roles and roles requiring 6+ years of experience by default. Only include them if the user explicitly requests stretch opportunities.
+5. **Only open positions.** Skip postings with expired deadlines or those marked as closed.
+6. **Be efficient with web page fetch.** Don't fetch every search result - use titles and snippets to pre-filter before fetching.
+7. **Parallel searches.** Use the Codex subagent workflow or parallel web search calls to speed up the search phase.
