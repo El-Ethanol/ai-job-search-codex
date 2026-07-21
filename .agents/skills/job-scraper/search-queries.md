@@ -1,13 +1,13 @@
 # Search Queries for Job Scraper
 
-Profile baseline: Musaab Mahjoub, Aalborg-based engineer targeting machine
-learning engineer, software engineer, quantitative trading / quantitative
-research, and structural engineer roles. Search
-geography priority: Aalborg first, North Jutland second, all Denmark third.
-Visa sponsorship / work-authorization support is a must-have.
+Profile baseline: [candidate name], targeting machine learning engineer,
+software engineer, quantitative trading / quantitative research, and
+structural engineer roles. Search geography priority:
+[primary region] first, [secondary region] second, [country] third.
+Visa sponsorship / work-authorization support is a must-have when relevant.
 Default target level: early-career to mid-level. Avoid senior/staff/principal/
 lead/manager/architect roles and postings requiring roughly 6+ years of
-experience unless Musaab explicitly asks for stretch roles.
+experience unless the candidate explicitly asks for stretch roles.
 
 ## Search Sites
 
@@ -30,19 +30,19 @@ categories. Prefer jobs posted within the last 14 days.
 
 ### Priority 1: Machine Learning Engineer / Applied AI
 
-These match Musaab's strongest AI/data direction.
+These match the candidate's strongest AI/data direction.
 
 ```text
-site:jobindex.dk "machine learning engineer" Aalborg
-site:jobindex.dk "machine learning engineer" Denmark
-site:jobindex.dk "AI engineer" Denmark
-site:jobindex.dk "data scientist" Aalborg
-site:jobindex.dk "data scientist" Denmark
-site:linkedin.com/jobs "machine learning engineer" Denmark
-site:linkedin.com/jobs "AI engineer" Denmark
-site:linkedin.com/jobs "data scientist" Denmark
-site:jobbank.dk "machine learning" Denmark
-site:jobnet.dk "machine learning" Denmark
+site:jobindex.dk "machine learning engineer" [location]
+site:jobindex.dk "machine learning engineer" [country]
+site:jobindex.dk "AI engineer" [country]
+site:jobindex.dk "data scientist" [location]
+site:jobindex.dk "data scientist" [country]
+site:linkedin.com/jobs "machine learning engineer" [country]
+site:linkedin.com/jobs "AI engineer" [country]
+site:linkedin.com/jobs "data scientist" [country]
+site:jobbank.dk "machine learning" [country]
+site:jobnet.dk "machine learning" [country]
 ```
 
 Useful variants when results are thin:
@@ -60,15 +60,15 @@ Useful variants when results are thin:
 These match full-stack and engineering-tool experience from EuroTec and Awatif.
 
 ```text
-site:jobindex.dk "software engineer" Aalborg
-site:jobindex.dk "software developer" Aalborg
-site:jobindex.dk "software engineer" "North Jutland"
-site:jobindex.dk "Python developer" Denmark
-site:jobindex.dk "TypeScript developer" Denmark
-site:linkedin.com/jobs "software engineer" Denmark
-site:linkedin.com/jobs "Python developer" Denmark
-site:jobbank.dk "software engineer" Denmark
-site:jobnet.dk "software developer" Denmark
+site:jobindex.dk "software engineer" [location]
+site:jobindex.dk "software developer" [location]
+site:jobindex.dk "software engineer" "[region]"
+site:jobindex.dk "Python developer" [country]
+site:jobindex.dk "TypeScript developer" [country]
+site:linkedin.com/jobs "software engineer" [country]
+site:linkedin.com/jobs "Python developer" [country]
+site:jobbank.dk "software engineer" [country]
+site:jobnet.dk "software developer" [country]
 ```
 
 Useful variants:
@@ -82,19 +82,19 @@ Useful variants:
 
 ### Priority 3: Structural Engineer / Computational Engineering
 
-These match Musaab's structural engineering, timber, finite element modelling,
+These match the candidate's structural engineering, timber, finite element modelling,
 and sustainability background.
 
 ```text
-site:jobindex.dk "structural engineer" Aalborg
-site:jobindex.dk "structural engineer" Denmark
-site:jobindex.dk "civil engineer" Aalborg
-site:jobindex.dk "timber" "structural engineer" Denmark
-site:jobindex.dk "finite element" Denmark
-site:linkedin.com/jobs "structural engineer" Denmark
-site:linkedin.com/jobs "civil engineer" Denmark
-site:jobbank.dk "structural engineer" Denmark
-site:jobnet.dk "bygningsingenior" Denmark
+site:jobindex.dk "structural engineer" [location]
+site:jobindex.dk "structural engineer" [country]
+site:jobindex.dk "civil engineer" [location]
+site:jobindex.dk "timber" "structural engineer" [country]
+site:jobindex.dk "finite element" [country]
+site:linkedin.com/jobs "structural engineer" [country]
+site:linkedin.com/jobs "civil engineer" [country]
+site:jobbank.dk "structural engineer" [country]
+site:jobnet.dk "bygningsingenior" [country]
 ```
 
 Useful variants:
@@ -107,22 +107,22 @@ Useful variants:
 
 ### Priority 4: Quantitative Trading / Quantitative Research
 
-These match Musaab's mathematical modelling, Python, machine learning,
+These match the candidate's mathematical modelling, Python, machine learning,
 optimization, statistics, and data-driven decision-making interests. Treat as a
 new career direction, so prioritize junior, graduate, analyst, researcher, and
 ordinary quant roles over senior trader roles.
 
 ```text
-site:jobindex.dk "quantitative analyst" Denmark
-site:jobindex.dk "quantitative developer" Denmark
-site:jobindex.dk "quantitative researcher" Denmark
-site:jobindex.dk "trading analyst" Denmark
-site:linkedin.com/jobs "quantitative analyst" Denmark
-site:linkedin.com/jobs "quantitative developer" Denmark
-site:linkedin.com/jobs "quantitative researcher" Denmark
-site:linkedin.com/jobs "trading analyst" Denmark
-site:jobbank.dk "quantitative analyst" Denmark
-site:jobnet.dk "quantitative analyst" Denmark
+site:jobindex.dk "quantitative analyst" [country]
+site:jobindex.dk "quantitative developer" [country]
+site:jobindex.dk "quantitative researcher" [country]
+site:jobindex.dk "trading analyst" [country]
+site:linkedin.com/jobs "quantitative analyst" [country]
+site:linkedin.com/jobs "quantitative developer" [country]
+site:linkedin.com/jobs "quantitative researcher" [country]
+site:linkedin.com/jobs "trading analyst" [country]
+site:jobbank.dk "quantitative analyst" [country]
+site:jobnet.dk "quantitative analyst" [country]
 ```
 
 Useful variants:
@@ -141,12 +141,12 @@ Use in broad searches. These roles may fit if they involve engineering,
 software, data, or applied AI rather than generic sales.
 
 ```text
-site:jobindex.dk "technical consultant" Python Denmark
-site:jobindex.dk "solutions engineer" software Denmark
-site:jobindex.dk "technical advisor" engineering Denmark
-site:linkedin.com/jobs "technical consultant" Denmark
-site:linkedin.com/jobs "solutions engineer" Denmark
-site:jobbank.dk "technical consultant" Denmark
+site:jobindex.dk "technical consultant" Python [country]
+site:jobindex.dk "solutions engineer" software [country]
+site:jobindex.dk "technical advisor" engineering [country]
+site:linkedin.com/jobs "technical consultant" [country]
+site:linkedin.com/jobs "solutions engineer" [country]
+site:jobbank.dk "technical consultant" [country]
 ```
 
 ### Priority 6: Visa Sponsorship / International Candidate Filters
@@ -155,23 +155,23 @@ Use these as additional checks, not as the only search strategy. Many relevant
 postings do not mention sponsorship directly.
 
 ```text
-"visa sponsorship" Denmark "software engineer"
-"visa sponsorship" Denmark "machine learning engineer"
-"work permit" Denmark "software engineer"
-"relocation" Denmark "machine learning engineer"
-"relocation package" Denmark engineer
+"visa sponsorship" [country] "software engineer"
+"visa sponsorship" [country] "machine learning engineer"
+"work permit" [country] "software engineer"
+"relocation" [country] "machine learning engineer"
+"relocation package" [country] engineer
 ```
 
 ## Location Filter
 
-When evaluating results, verify the role is compatible with Musaab's location
+When evaluating results, verify the role is compatible with the candidate's location
 and work authorization needs.
 
-- **Ideal:** Aalborg, Aalborg kommune, or remote/hybrid with realistic Aalborg base.
-- **Acceptable:** North Jutland / Nordjylland, including N Aalborg, Aalborg, Bronderslev, Hjorring, Frederikshavn, Hobro, Randers, Aarhus if hybrid/relocation makes sense.
-- **Broader search:** all Denmark, especially roles with relocation support, remote/hybrid options, or strong visa/work-authorization support.
-- **Borderline:** Copenhagen, Odense, Vejle, Kolding, Esbjerg, or Aarhus if the role requires frequent office presence and relocation details are unclear.
-- **Too far / likely skip:** roles outside Denmark unless explicitly remote from Denmark or clearly offering relocation and visa support.
+- **Ideal:** [primary city/region], or remote/hybrid with a realistic base.
+- **Acceptable:** [secondary city/region] and nearby commute options.
+- **Broader search:** [country-wide area], especially roles with relocation support, remote/hybrid options, or strong visa/work-authorization support.
+- **Borderline:** Other major hubs if office presence is frequent and relocation details are unclear.
+- **Too far / likely skip:** roles outside the target geography unless explicitly remote or clearly offering relocation and visa support.
 
 ## Must-Have Filters
 

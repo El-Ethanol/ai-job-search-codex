@@ -29,7 +29,7 @@ COVER_TEMPLATE = r"""%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-\namesection{}{\Huge{Musaab Mahjoub}}{  \href{mailto:musab.ahmed1996@gmail.com}{musab.ahmed1996@gmail.com} |  \urlstyle{same}\href{https://github.com/gottn}{GitHub}
+\namesection{}{\Huge{Your Name}}{  \href{mailto:you@example.com}{you@example.com} |  \urlstyle{same}\href{https://github.com/your-handle}{GitHub}
 }
 
 \currentdate{\today}
@@ -45,7 +45,7 @@ COVER_TEMPLATE = r"""%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{flushright}
 \closing{Kind regards,}
-\signature{Musaab Mahjoub}
+\signature{Your Name}
 \end{flushright}
 
 \end{document}

@@ -19,6 +19,7 @@ How well do the required/preferred skills align with the candidate's capabilitie
 **Strong match areas:** machine learning, data science, Python, computer vision, structural engineering, timber structures, finite element modelling, scientific computing, applied AI, modelling and simulation, mathematical modelling.
 **Moderate match areas:** full-stack development, engineering software, technical advisory, ETL pipelines, ML deployment and monitoring, cloud/devops, stakeholder collaboration, interactive explainable AI, symbolic AI concepts.
 **Weak or needs-confirmation areas:** production MLOps at large scale, enterprise architecture, formal people management, roles requiring native/professional Danish, pure frontend/product design roles, roles with no technical or analytical depth.
+**Default seniority target:** early-career to mid-level. Senior/staff/principal/lead/manager/architect roles, or postings asking for roughly 6+ years of experience, should be treated as likely rejection traps unless the user explicitly asks for stretch applications.
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for?
@@ -33,6 +34,7 @@ Does work history align with what they're looking for?
 **Strong:** applied ML for structural engineering, reclaimed timber research, structural timber connections, engineering software, data science pipelines, full-stack engineering tools for structural design, scientific modelling.
 **Moderate:** technical consulting, solutions engineering, cloud-based data workflows, production ML monitoring, AI explainability, automation platforms, startup/product-oriented engineering.
 **Entry-level or needs-careful framing:** formal software engineering roles requiring many years in a large product organization, senior MLOps/platform ownership, people-management roles, highly specialized enterprise frontend roles.
+**Likely skip by default:** roles where seniority is the main mismatch, even when the technical keywords overlap. Do not let keyword overlap alone produce a strong recommendation for senior production MLOps, staff/principal engineering, lead ownership, or manager roles.
 
 ### 3. Behavioral/Culture Fit (0-100)
 Does the role and company culture match the behavioral profile?
@@ -53,7 +55,7 @@ Does the role and company culture match the behavioral profile?
 - Frequent international travel: FLAG (discuss with user)
 - Does not support visa/work authorization when needed: FAIL
 
-**Known baseline:** Musaab is based in Aalborg, North Denmark Region, Denmark. Preferred geography is Aalborg first, North Jutland second, all Denmark third. Musaab is open to relocation, but visa sponsorship / work-authorization support is a must-have.
+**Known baseline:** [Candidate] is based in [city, region, country]. Preferred geography is [location priority]. The candidate is open to relocation, but visa sponsorship / work-authorization support is a must-have if applicable.
 
 ### 5. Career Alignment & Motivation (0-100)
 Does this role advance career goals and contain tasks that energize?
@@ -68,6 +70,7 @@ Does this role advance career goals and contain tasks that energize?
 **Career goals:**
 - Machine learning engineer roles connected to real-world engineering, computer vision, data pipelines, or applied AI.
 - Software engineer roles where engineering domain knowledge, data science, or scientific computing is useful.
+- Quantitative trading, quantitative research, or data-intensive finance roles where mathematical modelling, Python, machine learning, optimization, statistics, and data-driven decision-making are central.
 - Structural engineer roles, especially computational, timber, sustainability, or modelling-focused roles.
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
@@ -76,9 +79,9 @@ Does this role advance career goals and contain tasks that energize?
 - Non-task factors: visa sponsorship / work-authorization support is mandatory. Prefer Aalborg, North Jutland, then all Denmark. Open to relocation for strong roles.
 
 **Life situation alignment:** Consider personal constraints:
-- **Security**: visa sponsorship / work-authorization support is a must-have.
+- **Security**: visa sponsorship / work-authorization support is a must-have when required.
 - **Flexibility**: Needs user input.
-- **Professional development**: likely strong interest in applied AI, data science, engineering software, and research-to-product work; confirm with Musaab before treating as a hard filter.
+- **Professional development**: likely strong interest in applied AI, data science, engineering software, and research-to-product work; confirm with the candidate before treating as a hard filter.
 
 ### 6. Salary Benchmark (Optional)
 
@@ -152,6 +155,16 @@ Present the evaluation as:
 - **Moderate Fit** (45-59): Consider carefully, discuss with user
 - **Weak Fit** (30-44): Probably skip unless strategic reasons
 - **Poor Fit** (<30): Skip
+
+## Seniority Gate
+
+Before recommending an application, check seniority separately from technical keywords:
+
+- **Proceed by default:** junior, graduate, associate, early-career, ordinary engineer/developer/scientist, or postings with no high seniority signal.
+- **Discuss first:** postings asking for 4-5 years, broad ownership, or "experienced" without a clear senior title.
+- **Skip by default:** senior, staff, principal, lead, manager, architect, director, or postings asking for 6+ years / many years of relevant experience.
+
+If a job fails the seniority gate, cap the recommendation at **Weak Fit** unless the user explicitly requests stretch roles.
 
 ## Pre-Application: Call the Employer (Best Practice)
 

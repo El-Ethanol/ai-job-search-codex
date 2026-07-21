@@ -12,20 +12,20 @@ Keep answers to 1-2 minutes. Be specific. End with what you learned or would do 
 
 Path A found strong STAR candidates but not enough detail to safely invent full stories. Complete the missing Situation/Task/Result details before using these in interviews.
 
-### 1. EuroTec Facade Design Web Application (engineering software, stakeholder collaboration)
-**Source:** CV and LinkedIn, EuroTec GmbH.
-**What happened:** Musaab developed a web application for facade design using EuroTec facade system screws.
+### 1. Engineering Software Web Application (engineering software, stakeholder collaboration)
+**Source:** CV and LinkedIn, previous employer.
+**What happened:** The candidate developed a web application for facade design using company-specific hardware or product constraints.
 **Why it matters:** Shows full-stack engineering, requirements gathering, domain expertise, and business impact.
 **S/T/A/R stub:**
-- Situation: EuroTec needed a facade design tool for its screw systems.
-- Task: [Add what Musaab was specifically responsible for and who needed the tool.]
+- Situation: The company needed a design tool for a technical product or workflow.
+- Task: [Add what you were specifically responsible for and who needed the tool.]
 - Action: Led requirements gathering, system architecture design, implementation, testing, and stakeholder collaboration using Django, JavaScript, CSS, and HTML.
 - Result: The tool increased competitiveness in the European market and led to requests for client-specific versions.
 **Use for:** "Tell me about a product you built", "How do you work with stakeholders?", "Give an example of turning domain knowledge into software."
 
-### 2. AILY Labs Invoice Classification Model (ML pipelines, deployment, monitoring)
-**Source:** CV, AILY Labs.
-**What happened:** Musaab worked on ETL pipelines and an invoice classification model during a part-time data science and AI internship.
+### 2. Invoice Classification Model (ML pipelines, deployment, monitoring)
+**Source:** CV, internship or project role.
+**What happened:** The candidate worked on ETL pipelines and an invoice classification model during a part-time data science and AI internship.
 **Why it matters:** Shows applied data science, Python, ML monitoring, cloud/devops exposure, and cross-functional collaboration.
 **S/T/A/R stub:**
 - Situation: [Add the business or data context for invoice classification.]
@@ -34,9 +34,9 @@ Path A found strong STAR candidates but not enough detail to safely invent full 
 - Result: Invoice classification model achieved 87% accuracy.
 **Use for:** "Tell me about an ML project", "How do you ensure model quality?", "Describe a cross-functional technical project."
 
-### 3. Aalborg Reclaimed Timber ML Research (research, sustainability, computer vision)
-**Source:** CV and LinkedIn, Aalborg University.
-**What happened:** Musaab researches machine learning models for structural reuse of reclaimed timber.
+### 3. Applied ML Research Project (research, sustainability, computer vision)
+**Source:** CV and LinkedIn, university or research role.
+**What happened:** The candidate researches machine learning models for structural reuse, sustainability, or inspection problems.
 **Why it matters:** Shows current research direction, sustainability angle, applied ML, and industry validation.
 **S/T/A/R stub:**
 - Situation: Reclaimed timber reuse needs reliable quality and load-bearing assessment.
@@ -45,9 +45,9 @@ Path A found strong STAR candidates but not enough detail to safely invent full 
 - Result: [Add concrete result when available: model performance, publication, prototype, dataset, industry validation.]
 **Use for:** "Why this field?", "Describe your research", "How do you validate models in the real world?"
 
-### 4. University of Navarra Digital Image Correlation System (computer vision, experimental engineering)
-**Source:** CV, University of Navarra.
-**What happened:** Musaab developed a data acquisition system using computer vision for DIC on timber specimens.
+### 4. Digital Image Correlation System (computer vision, experimental engineering)
+**Source:** CV, university or lab role.
+**What happened:** The candidate developed a data acquisition system using computer vision for DIC on test specimens.
 **Why it matters:** Shows bridge between structural testing, computer vision, Python/MATLAB, and experimental methods.
 **S/T/A/R stub:**
 - Situation: Timber connection experiments required measurement and analysis of specimen behaviour.
@@ -56,9 +56,9 @@ Path A found strong STAR candidates but not enough detail to safely invent full 
 - Result: [Add what the system enabled: measurement accuracy, experiment throughput, analysis quality, reports, paper, or adoption.]
 **Use for:** "Tell me about a technical challenge", "How do you combine software with engineering experiments?", "Describe your computer vision experience."
 
-### 5. Awatif.co Parametric Engineering Platform (startup initiative, TypeScript, finite element solver)
-**Source:** CV and LinkedIn, Awatif.co.
-**What happened:** Musaab co-founded a web-based parametric structural engineering platform.
+### 5. Parametric Engineering Platform (startup initiative, TypeScript, finite element solver)
+**Source:** CV and LinkedIn, side project or startup.
+**What happened:** The candidate co-founded a web-based parametric structural engineering platform.
 **Why it matters:** Shows initiative, product thinking, engineering automation, TypeScript, Three.js, Node.js, and finite element solver work.
 **S/T/A/R stub:**
 - Situation: Structural engineers and non-programmers need accessible automation and parametric engineering tools.
@@ -67,9 +67,9 @@ Path A found strong STAR candidates but not enough detail to safely invent full 
 - Result: [Add usage, demo, customer/user feedback, technical milestone, or current platform status.]
 **Use for:** "Tell me about initiative", "Describe a side project", "How do you make complex tools usable?"
 
-### 6. UAB Thesis on Belief Revision for Interactive Explainable AI (research, symbolic AI, prototyping)
-**Source:** LinkedIn and diploma, Universitat Autonoma de Barcelona / IIIA-CSIC.
-**What happened:** Musaab completed a Master's thesis on belief revision for interactive explainable AI.
+### 6. Thesis on Interactive Explainable AI (research, symbolic AI, prototyping)
+**Source:** LinkedIn and diploma, university thesis.
+**What happened:** The candidate completed a Master's thesis on belief revision for interactive explainable AI.
 **Why it matters:** Shows AI research depth beyond standard ML tooling, including symbolic AI and human-machine explanation dynamics.
 **S/T/A/R stub:**
 - Situation: Static, machine-centric explanations can limit interactive human understanding of AI systems.
@@ -87,7 +87,7 @@ Path A found strong STAR candidates but not enough detail to safely invent full 
 > Acknowledge the exact gap, then bridge to adjacent evidence. Example pattern: "I have not owned X at that scale yet. The closest work I have done is Y, where I used Z. I would ramp up by..."
 
 ### "Where do you see yourself in 5 years?"
-> Needs user input. Draft around applied AI, engineering software, and research-to-product work only if that matches Musaab's actual goals.
+> Needs user input. Draft around applied AI, engineering software, and research-to-product work only if that matches the candidate's actual goals.
 
 ### "What's your biggest weakness?"
 > Needs user input. Pick a real but manageable weakness with a concrete mitigation strategy. Avoid fake weaknesses.
