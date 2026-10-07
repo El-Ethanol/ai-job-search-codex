@@ -26,6 +26,8 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 SEARCH_QUERIES = ROOT / ".agents" / "skills" / "job-scraper" / "search-queries.md"
+# Personal queries live in a gitignored file so the tracked template stays generic.
+LOCAL_SEARCH_QUERIES = ROOT / "job_scraper" / "search-queries.local.md"
 SEEN_JOBS = ROOT / "job_scraper" / "seen_jobs.json"
 TRACKER = ROOT / "job_search_tracker.csv"
 DEFAULT_REPORT = ROOT / "job_scraper" / "latest_report.md"
@@ -355,11 +357,11 @@ def parse_jobindex(query: Query, *, max_rows: int) -> tuple[list[Job], str | Non
 
     try:
         data = json.loads(match.group(1))
-        rows = (
-            data["jobsearch/result_app"]["storeData"]["searchResponse"].get("results", [])[
-                :max_rows
-            ]
-        )
+        # Jobindex renamed "jobsearch/result_app" to "jobsearch/result_app/list" (seen 2026-10); accept both.
+        app_key = next((key for key in data if key.startswith("jobsearch/result_app")), None)
+        if app_key is None:
+            return [], f"Jobindex {query.text}: parse failed: no jobsearch/result_app* key"
+        rows = data[app_key]["storeData"]["searchResponse"].get("results", [])[:max_rows]
     except (KeyError, TypeError, json.JSONDecodeError) as exc:
         return [], f"Jobindex {query.text}: parse failed: {exc}"
 
@@ -666,12 +668,25 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--max-linkedin-per-query", type=int, default=5, help="Max LinkedIn rows per query.")
     parser.add_argument("--source", choices=["all", "jobindex", "linkedin"], default="all")
     parser.add_argument("--detail-delay", type=float, default=0.2, help="Delay between LinkedIn detail fetches.")
+    parser.add_argument(
+        "--queries",
+        type=Path,
+        help="Search-queries file. Default: job_scraper/search-queries.local.md if present, else the template.",
+    )
     args = parser.parse_args(argv)
 
     seen_data = load_seen(SEEN_JOBS)
     seen_before = set(seen_data.get("seen", {}).keys())
     tracker_keys = load_tracker_keys(TRACKER)
-    queries = parse_queries(SEARCH_QUERIES, broad=args.broad)
+    queries_path = args.queries or (LOCAL_SEARCH_QUERIES if LOCAL_SEARCH_QUERIES.exists() else SEARCH_QUERIES)
+    queries = parse_queries(queries_path, broad=args.broad)
+    placeholder_queries = [query.text for query in queries if "[" in query.text]
+    if placeholder_queries:
+        print(
+            f"Warning: {len(placeholder_queries)} queries in {queries_path} still contain template placeholders. "
+            "Copy the template to job_scraper/search-queries.local.md and fill it in.",
+            file=sys.stderr,
+        )
     if args.source != "all":
         queries = [query for query in queries if query.source == args.source]
 
